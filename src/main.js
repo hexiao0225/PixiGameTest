@@ -38,4 +38,6 @@ function getMousePos(event) {
   //   'clientX: ' + event.clientX + ' - clientY: ' + event.clientY;
 }
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 document.addEventListener('click', getMousePos);

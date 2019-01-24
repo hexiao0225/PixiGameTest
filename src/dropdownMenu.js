@@ -17,6 +17,7 @@ var text = new PIXI.Text('menu', {
   fill: 0x666666,
   align: 'center',
   cacheAsBitmap: true, // for better performance
+
   height: 57,
   width: 82
 });
