@@ -6,18 +6,8 @@
 
 var stage = new PIXI.Container();
 var box;
-/*
-document.addEventListener(
-  'contextmenu',
-  function(e) {
-    alert("You've tried to open context menu");
-    <ul></ul>
-    //here you draw your own menu
-    e.preventDefault();
-  },
-  false
-);
 
+/*
 PIXI.loader
   .add([
     'bin/assets/box1.png',

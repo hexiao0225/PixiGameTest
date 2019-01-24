@@ -7,12 +7,11 @@ class Box {
     this.sprite.position.set(renderer.width * 0.2, renderer.height * 0.4);
     this.sprite.scale.set(0.4, 0.4);
     this.type = 'container';
-    //this.sprite.on('click', onButtonDown);
+    this.sprite.on('click', onButtonDown);
     //this.sprite.on('pointerdown', pointerDown);
-    //this.sprite.addEventsListener('contextmenu', rightClick);
-    this.sprite.on('contextmenu', function(e) {
+    // this.sprite.rightclick('contextmenu', rightClick);
+    this.sprite.on('rightclick', function(e) {
       console.log('right click');
-      e.preventDefault();
       alert('rightclick');
     });
 
@@ -27,4 +26,8 @@ function pointerDown() {
   console.log('pointer down detected');
 }
 
-function rightClick() {}
+function rightClick() {
+  console.log('right click');
+  e.preventDefault();
+  alert('rightclick');
+}
