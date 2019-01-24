@@ -6,6 +6,7 @@
 
 var stage = new PIXI.Container();
 var box;
+var mousePosition = [0, 0];
 
 /*
 PIXI.loader
@@ -29,3 +30,12 @@ function loop() {
   requestAnimationFrame(loop);
   renderer.render(stage);
 }
+
+function getMousePos(event) {
+  mousePosition[0] = event.clientX;
+  mousePosition[1] = event.clientY;
+  // document.body.textContent =
+  //   'clientX: ' + event.clientX + ' - clientY: ' + event.clientY;
+}
+
+document.addEventListener('click', getMousePos);

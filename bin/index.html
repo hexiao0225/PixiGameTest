@@ -7,6 +7,7 @@
   <script src="../src/lib/pixi.min.js"></script>
   <script src="../src/main.js"></script>
   <script src="../src/box.js"></script>
+  <script src="../src/dropdownMenu.js"></script>
   <body onload="init()">
     <script type="text/javascript">
       var type = 'WebGL';
@@ -22,12 +23,16 @@
         window.innerHeight
       );
       document.body.appendChild(renderer.view);
+      renderer.view.setAttribute('id', 'myCanvas');
     </script>
     <style>
       body {
         margin: 0pt;
         text-align: center;
         overflow: hidden;
+      }
+      .show {
+        display: block;
       }
     </style>
   </body>
