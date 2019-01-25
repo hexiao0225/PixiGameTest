@@ -10,14 +10,18 @@ class dropdownMenu {
     this.sprite.addChild(text);
     stage.addChild(this.sprite);
   }
+
+  hideSprite() {
+    this.sprite.visible = false;
+    console.log('show sprite');
+  }
 }
 
 var text = new PIXI.Text('menu', {
-  font: '20px Arial',
+  font: '40px Arial',
   fill: 0x666666,
   align: 'center',
   cacheAsBitmap: true, // for better performance
-
   height: 57,
   width: 82
 });

@@ -1,3 +1,4 @@
+var showSprite = true;
 class Box {
   constructor() {
     this.sprite = PIXI.Sprite.fromImage('../bin/assets/box1.png');
@@ -27,6 +28,13 @@ function leftClick() {
 function rightClick() {
   //this.addChild(list);
   var newMenu = new dropdownMenu();
+  if (!showSprite) showSprite = true;
+  if (showSprite) {
+    //newMenu.hideSprite();
+    stage.removeChild(newMenu);
+    showSprite = false;
+  }
+
   console.log('right click x ' + mousePosition[0]);
   //e.preventDefault();
   //alert('rightclick');
