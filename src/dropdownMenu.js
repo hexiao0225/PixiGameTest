@@ -26,8 +26,11 @@ class dropdownMenu {
     menu_verb.text = s;
   }
 
-  updatePosition(x, y) {
+  updatePositionX(x) {
     this.sprite.position.x = x;
+  }
+
+  updatePositionY(y) {
     this.sprite.position.y = y;
   }
 

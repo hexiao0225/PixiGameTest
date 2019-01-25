@@ -1,5 +1,5 @@
 var showSprite = false;
-let menu;
+var menuList;
 class Box {
   constructor() {
     this.sprite = PIXI.Sprite.fromImage('../bin/assets/box1.png');
@@ -30,21 +30,21 @@ class Box {
   }
 
   updateMenuList() {
+    //console.log('called');
     const vl = this.sprite.verbList;
-    let i;
-    for (i = 0; i < vl.lengh; i++) {
+    var i;
+    var currY;
+    var menuList = [];
+    for (i = 0; i < vl.length; i++) {
       console.log('verbs ' + vl[i]);
+      var menu = new dropdownMenu();
+      menu.updateVerb(vl[i]);
+      menu.updatePositionY(currY + menu.getMenuButtonHeight());
+      currY = menu.getCurrPositionY();
+      menuList.push(menu);
+      console.log('curr menu length ' + menuList.length);
     }
-    if (!menu) {
-      menu = new dropdownMenu();
-      const menuButtonHeight = menu.getMenuButtonHeight();
-      // console.log(menu.getCurrPositionX());
-      // console.log(menu.getCurrPositionY());
-      //console.log(menu.getMenuButtonHeight());
-      menu.updateVerb('haha');
-    } else {
-      menu.hideSprite();
-    }
+    return menuList;
   }
 }
 
@@ -53,6 +53,21 @@ function leftClick() {
 }
 
 function rightClick() {
-  this.updateMenuList();
-  console.log('right click x ' + mousePosition[0]);
+  //   var menuList = new dropdownMenu();
+  //   var menu2 = new dropdownMenu();
+  //   menu2.updatePositionY(
+  //     menuList.getCurrPositionY() + menuList.getMenuButtonHeight()
+  //   );
+  menuList = this.updateMenuList();
+  if (!menuList) {
+    var i;
+
+    //menuList = this.updateMenuList();
+    // console.log(menu.getCurrPositionX());
+    // console.log(menu.getCurrPositionY());
+    //console.log(menu.getMenuButtonHeight());
+  } else {
+    //menuList.hideSprite();
+  }
+  //console.log('right click x ' + mousePosition[0]);
 }
