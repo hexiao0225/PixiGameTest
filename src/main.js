@@ -21,6 +21,8 @@ PIXI.loader
 function init() {
   console.log('init');
   box = new Box();
+  console.log('tag type is ' + box.getTagType());
+  console.log('verb list is ' + box.getVerbList());
   renderer.backgroundColor = 0x22a7f0;
   renderer.render(stage);
   loop();
