@@ -1,5 +1,5 @@
 var showSprite = false;
-var menuList;
+var menu;
 class Box {
   constructor() {
     this.sprite = PIXI.Sprite.fromImage('../bin/assets/box1.png');
@@ -31,20 +31,6 @@ class Box {
 
   updateMenuList() {
     //console.log('called');
-    const vl = this.sprite.verbList;
-    var i;
-    var currY;
-    var menuList = [];
-    for (i = 0; i < vl.length; i++) {
-      console.log('verbs ' + vl[i]);
-      var menu = new dropdownMenu();
-      menu.updateVerb(vl[i]);
-      menu.updatePositionY(currY + menu.getMenuButtonHeight());
-      currY = menu.getCurrPositionY();
-      menuList.push(menu);
-      console.log('curr menu length ' + menuList.length);
-    }
-    return menuList;
   }
 }
 
@@ -53,14 +39,36 @@ function leftClick() {
 }
 
 function rightClick() {
-  //   var menuList = new dropdownMenu();
-  //   var menu2 = new dropdownMenu();
+  // menu2.updatePositionY(
+  //   menuList.getCurrPositionY + 2 * menuList.getMenuButtonHeight()
+  // );
   //   menu2.updatePositionY(
   //     menuList.getCurrPositionY() + menuList.getMenuButtonHeight()
   //   );
-  menuList = this.updateMenuList();
-  if (!menuList) {
+  if (!menu) {
+    const vl = this.getVerbList();
     var i;
+    var height;
+
+    for (i = 0; i < vl.length; i++) {
+      console.log('verbs ' + vl[i]);
+      if (i == 0) {
+        var firstButton = new dropdownMenu(
+          mousePosition[0],
+          mousePosition[1],
+          vl[i]
+        );
+        //firstButton.updateVerb(vl[i]);
+        height = firstButton.getMenuButtonHeight();
+      } else {
+        var menu = new dropdownMenu(
+          mousePosition[0],
+          mousePosition[1] + i * height,
+          vl[i]
+        );
+        //menu.updateVerb(vl[i]);
+      }
+    }
 
     //menuList = this.updateMenuList();
     // console.log(menu.getCurrPositionX());
