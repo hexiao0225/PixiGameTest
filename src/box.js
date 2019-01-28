@@ -8,19 +8,15 @@ class Box {
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.position.set(renderer.width * 0.2, renderer.height * 0.4);
     this.sprite.scale.set(0.4, 0.4);
-    //tags ["container","moveable","collectable"]
-    this.tagType = ['container'];
-    this.sprite.verbList = ['lookUp', 'burn', 'other'];
-    //left and right click
+    this.tagType = ['container']; //container -> open as left click default
+    this.sprite.verbList = ['lookUp', 'burn', 'kick', 'etc']; //right click actions
     this.sprite.on('click', leftClick.bind(this));
-
     this.sprite.on('rightclick', rightClick.bind(this));
     this.sprite.id = 'boxId';
     stage.addChild(this.sprite);
     this.sprite.menuList = null;
 
-    //will show an array of children
-    console.log(stage.children);
+    console.log(stage.children); //debug use
   }
   getTagType() {
     return this.sprite.tagType;
@@ -28,25 +24,17 @@ class Box {
   getVerbList() {
     return this.sprite.verbList;
   }
-
-  updateMenuList() {
-    //console.log('called');
-  }
 }
 
+//left click -> apply default action
 function leftClick() {
-  this.sprite.visible = false;
+  this.sprite.alpha = 0;
   box2 = new Box('box2.png');
   console.log('opened box');
 }
 
+//right click -> show a list of verbs
 function rightClick() {
-  // menu2.updatePositionY(
-  //   menuList.getCurrPositionY + 2 * menuList.getMenuButtonHeight()
-  // );
-  //   menu2.updatePositionY(
-  //     menuList.getCurrPositionY() + menuList.getMenuButtonHeight()
-  //   );
   if (!menu) {
     const vl = this.getVerbList();
     var i;
@@ -71,13 +59,7 @@ function rightClick() {
         //menu.updateVerb(vl[i]);
       }
     }
-
-    //menuList = this.updateMenuList();
-    // console.log(menu.getCurrPositionX());
-    // console.log(menu.getCurrPositionY());
-    //console.log(menu.getMenuButtonHeight());
   } else {
     menu.hideSprite();
   }
-  //console.log('right click x ' + mousePosition[0]);
 }

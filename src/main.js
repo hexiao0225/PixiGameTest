@@ -11,6 +11,7 @@ var baseURL = {
   requireAssets: './Resources/Assets/require/',
   nomalAssets: '../bin/assets/'
 };
+var inventory = {};
 
 /*
 PIXI.loader
@@ -25,6 +26,7 @@ PIXI.loader
 function init() {
   console.log('init');
   box = new Box('box1.png');
+  key = new Collectable('key.png');
   //console.log('tag type is ' + box.getTagType());
   //console.log('verb list is ' + box.getVerbList());
   renderer.backgroundColor = 0x22a7f0;

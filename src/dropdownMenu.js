@@ -1,6 +1,5 @@
 class dropdownMenu {
   constructor(x, y, verb) {
-    //this = '<div class="dropdown-content"><ul><li>happy</li><li>sad</li></ul></div>';
     this.sprite = PIXI.Sprite.fromImage('../bin/assets/button1.png');
     this.sprite.interactive = true;
     this.sprite.buttonMode = true;
