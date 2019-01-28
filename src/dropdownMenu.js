@@ -8,10 +8,10 @@ class dropdownMenu {
     //this.sprite.position.set(renderer.width * 0.2, renderer.height * 0.4);
     this.sprite.position.x = x;
     this.sprite.position.y = y;
-    this.sprite.scale.set(0.3, 0.3);
+    this.sprite.scale.set(0.6, 0.6);
     this.sprite.addChild(
       new PIXI.Text(verb, {
-        font: '2em Arial',
+        font: '20px Arial',
         fill: 0x666666,
         align: 'center',
         cacheAsBitmap: true // for better performance
@@ -19,7 +19,7 @@ class dropdownMenu {
     );
     stage.addChild(this.sprite);
     this.sprite.on('click', function() {
-      console.log('text is ' + verb.text);
+      alert('text is ' + verb);
     });
   }
 

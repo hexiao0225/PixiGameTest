@@ -10,7 +10,7 @@ class Box {
     this.sprite.scale.set(0.4, 0.4);
     //tags ["container","moveable","collectable"]
     this.tagType = ['container'];
-    this.sprite.verbList = ['lookUp', 'burn'];
+    this.sprite.verbList = ['lookUp', 'burn', 'other'];
     //left and right click
     this.sprite.on('click', leftClick.bind(this));
 
@@ -75,7 +75,7 @@ function rightClick() {
     // console.log(menu.getCurrPositionY());
     //console.log(menu.getMenuButtonHeight());
   } else {
-    //menuList.hideSprite();
+    menu.hideSprite();
   }
   //console.log('right click x ' + mousePosition[0]);
 }
