@@ -7,6 +7,10 @@
 var stage = new PIXI.Container();
 var box;
 var mousePosition = [0, 0];
+var baseURL = {
+  requireAssets: './Resources/Assets/require/',
+  nomalAssets: '../bin/assets/'
+};
 
 /*
 PIXI.loader
@@ -20,7 +24,7 @@ PIXI.loader
 */
 function init() {
   console.log('init');
-  box = new Box();
+  box = new Box('box1.png');
   //console.log('tag type is ' + box.getTagType());
   //console.log('verb list is ' + box.getVerbList());
   renderer.backgroundColor = 0x22a7f0;

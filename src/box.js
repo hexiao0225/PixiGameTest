@@ -1,8 +1,8 @@
 var showSprite = false;
 var menu;
 class Box {
-  constructor() {
-    this.sprite = PIXI.Sprite.fromImage('../bin/assets/box1.png');
+  constructor(_url) {
+    this.sprite = PIXI.Sprite.fromImage(baseURL.nomalAssets + _url);
     this.sprite.interactive = true;
     this.sprite.buttonMode = true;
     this.sprite.anchor.set(0.5, 0.5);
@@ -35,6 +35,8 @@ class Box {
 }
 
 function leftClick() {
+  this.sprite.visible = false;
+  box2 = new Box('box2.png');
   console.log('opened box');
 }
 
