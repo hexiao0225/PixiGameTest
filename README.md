@@ -1,5 +1,9 @@
 # PixiGameTest
-pixi game made for Alice Adventure Game Tool for the purpose of testing features
+This repo is for experimenting new features for CMU ETC Spring 2019 Project Another Alice Adventure, a 2d adventure game making tool. To learn more, visit https://www.etc.cmu.edu/projects/another-alice-adventure/
 
-Task 1:
-Support Right Click on Sprite for drop down menu
+Feature 1: Mouse Click
+  Left click for default actions. 
+  Right click on Sprite for drop down menu with a list of verbs
+
+Feature 2: 
+  Conversation System
