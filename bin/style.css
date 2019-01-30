@@ -1,7 +1,15 @@
 body {
   margin: 0pt;
-  text-align: center;
+  /* text-align: center; */
   overflow: hidden;
+}
+.conversationTreeBackgroundImage {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  border: 1cm;
+  border-color: black;
+  position: absolute;
 }
 .show {
   display: block;

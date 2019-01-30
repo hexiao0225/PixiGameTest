@@ -9,10 +9,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <script src="../src/lib/vue.js"></script>
   <script src="../src/lib/pixi.min.js"></script>
+  <script src="../src/converstationTree.js"></script>
 
   <body>
     <button
@@ -41,14 +42,21 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-content">
-          <!-- start from here -->
+          <!-- buttons -->
           <div>
             <button id="addChildNode">Add Child Node</button>
             <button id="addSiblingNode">Add Sibling Node</button>
             <button id="deleteNode">Delete Node</button>
             <button id="saveConversation">Save Conversation</button>
           </div>
-          <div>Drawing Area</div>
+          <!-- drawing area -->
+          <div>
+            <p>Drawing Area</p>
+            <img
+              class="conversationTreeBackgroundImage"
+              src="assets/blackCanvas.png"
+            />
+          </div>
         </div>
       </div>
     </div>
