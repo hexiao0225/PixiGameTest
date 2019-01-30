@@ -50,12 +50,19 @@
             <button id="saveConversation">Save Conversation</button>
           </div>
           <!-- drawing area -->
-          <div>
-            <p>Drawing Area</p>
-            <img
-              class="conversationTreeBackgroundImage"
-              src="assets/blackCanvas.png"
-            />
+          <div id="canvas-container">
+            <div id="drawing-area" class="no-select">
+              <div id="node_0" class="nodeTextArea">
+                <script>
+                  document.getElementById('node_0').innerHTML = node_0.text;
+                </script>
+              </div>
+              <div id="node_1" class="nodeTextArea">
+                <script>
+                  document.getElementById('node_1').innerHTML = node_1.text;
+                </script>
+              </div>
+            </div>
           </div>
         </div>
       </div>

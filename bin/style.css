@@ -3,14 +3,48 @@ body {
   /* text-align: center; */
   overflow: hidden;
 }
-.conversationTreeBackgroundImage {
+/* .conversationTreeBackgroundImage {
   vertical-align: middle;
   border-style: none;
   max-width: 100%;
   border: 1cm;
   border-color: black;
   position: absolute;
-}
+} */
 .show {
   display: block;
+}
+
+#canvas-container {
+  position: relative;
+  width: 100%;
+}
+.no-select {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#drawing-area {
+  position: relative;
+  background-color: #8c4e4e;
+  background-image: url('assets/whiteCanvas.png');
+  background-size: 24px 24px;
+  image-rendering: -moz-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  min-height: 300px;
+}
+.nodeTextArea {
+  resize: vertical;
+  background-color: #bebeec;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  width: 160px;
+  height: 35px;
+  margin: 10px;
 }
