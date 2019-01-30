@@ -53,9 +53,21 @@
           <div id="canvas-container">
             <div id="drawing-area" class="no-select">
               <div id="node_0" class="nodeTextArea">
+                <textarea>text</textarea>
                 <script>
-                  document.getElementById('node_0').innerHTML = node_0.text;
+                  var text = (document.getElementById('node_0').innerHTML =
+                    node_0.text);
                 </script>
+                <canvas id="path_canvas">
+                  <script>
+                    var c = document.getElementById('path_canvas');
+                    var ctx = c.getContext('2d');
+                    ctx.beginPath();
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(300, 150);
+                    ctx.stroke();
+                  </script>
+                </canvas>
               </div>
               <div id="node_1" class="nodeTextArea">
                 <script>
@@ -67,7 +79,11 @@
         </div>
       </div>
     </div>
-
+    <script>
+      var targetNode = document.getElementById('deleteNode');
+      var rect = targetNode.getBoundingClientRect();
+      console.log(rect.top, rect.right, rect.bottom, rect.left);
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
