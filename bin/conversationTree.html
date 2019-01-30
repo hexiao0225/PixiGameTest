@@ -17,6 +17,7 @@
 
   <body>
     <button
+      id="createNewConversationButton"
       type="button"
       class="btn btn-primary"
       data-toggle="modal"
@@ -44,34 +45,29 @@
         <div class="modal-content">
           <!-- buttons -->
           <div>
-            <button id="addChildNode">Add Child Node</button>
-            <button id="addSiblingNode">Add Sibling Node</button>
-            <button id="deleteNode">Delete Node</button>
-            <button id="saveConversation">Save Conversation</button>
+            <button id="addChildNode" class="btn">Add Child Node</button>
+            <button id="addSiblingNode" class="btn">Add Sibling Node</button>
+            <button id="deleteNode" class="btn">Delete Node</button>
+            <button id="saveConversation" class="btn">Save Conversation</button>
           </div>
           <!-- drawing area -->
           <div id="canvas-container">
             <div id="drawing-area" class="no-select">
               <div id="node_0" class="nodeTextArea">
-                <textarea>text</textarea>
                 <script>
                   var text = (document.getElementById('node_0').innerHTML =
                     node_0.text);
+                  var targetNode = document.getElementById('canvas-container');
+                  var rect = targetNode.getBoundingClientRect();
+                  console.log(rect.top, rect.right, rect.bottom, rect.left);
                 </script>
-                <canvas id="path_canvas">
-                  <script>
-                    var c = document.getElementById('path_canvas');
-                    var ctx = c.getContext('2d');
-                    ctx.beginPath();
-                    ctx.moveTo(0, 0);
-                    ctx.lineTo(300, 150);
-                    ctx.stroke();
-                  </script>
-                </canvas>
+
+                <canvas id="path_canvas"></canvas>
               </div>
               <div id="node_1" class="nodeTextArea">
                 <script>
                   document.getElementById('node_1').innerHTML = node_1.text;
+                  drawPath();
                 </script>
               </div>
             </div>
@@ -79,11 +75,7 @@
         </div>
       </div>
     </div>
-    <script>
-      var targetNode = document.getElementById('deleteNode');
-      var rect = targetNode.getBoundingClientRect();
-      console.log(rect.top, rect.right, rect.bottom, rect.left);
-    </script>
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

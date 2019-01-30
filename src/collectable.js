@@ -9,7 +9,7 @@ class Collectable {
     this.tagType = ['collectable']; //container -> open as left click default
     this.sprite.verbList = ['lookUp', 'burn', 'kick', 'etc']; //right click actions
     this.sprite.on('click', function() {
-      alert('you should collect this key');
+      alert('will be added to inventory.');
     });
     //this.sprite.on('rightclick', rightClick.bind(this));
     this.sprite.id = 'collectableId';
