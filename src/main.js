@@ -27,8 +27,7 @@ function init() {
   console.log('init');
   box = new Box('box1.png');
   key = new Collectable('key.png');
-  //console.log('tag type is ' + box.getTagType());
-  //console.log('verb list is ' + box.getVerbList());
+  //button = new ConversationButton('button2.png'); //for testing modal purpose only. should use button later.
   renderer.backgroundColor = 0x22a7f0;
   renderer.render(stage);
   loop();
