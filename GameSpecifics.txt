@@ -1,3 +1,5 @@
+Index.html -> created a canvas using pixi.js
+
 Left Click:
 	if tag == "collectable":
 		add object to inventory
@@ -7,4 +9,10 @@ Left Click:
 		open box and see the object inside
 
 Right Click:
-	fake dropdown menu
+	dropdown menu with buttons and text.
+	
+conversationalTree.html -> test for front-end of conversational tree
+	addChildNode: draw a line from current node and add new node as child
+	addSiblingNode: draw a line from current node and add new node as sibling
+	delelteNode: delete line and node
+	save: save nodes and parse to backend as a json file
